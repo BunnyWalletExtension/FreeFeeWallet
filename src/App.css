@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'jbmn';
+    src: url('D:/laptrinh/FreeFeeWallet/src/assets/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'jbmn-bold';
+    src: url('D:/laptrinh/FreeFeeWallet/src/assets/ttf/JetBrainsMono-Bold.ttf') format('truetype');
+}
+
+.App {
+    width: 350px;
+    height: 550px;
+    background-color: #000;
+    font-family: 'jbmn';
+}

@@ -1,0 +1,367 @@
+/* Tùy chỉnh thanh trượt */
+.earn-page::-webkit-scrollbar {
+  width: 10px; /* Độ rộng của thanh trượt */
+}
+
+/* Phần nền của thanh trượt */
+.earn-page::-webkit-scrollbar-track {
+  background: #000; /* Màu nền của track */
+  /* border-radius: 10px; */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+}
+
+/* Phần thumb (phần di chuyển của thanh trượt) */
+.earn-page::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4a90e2, #50c4b7); /* Gradient màu cho thumb */
+  border-radius: 10px; 
+  border: 2px solid #000; /* Viền quanh thumb */
+}
+
+/* Hiệu ứng hover cho thumb */
+.earn-page::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #357abd, #3baaa0); /* Màu gradient khi hover */
+}
+
+.earn-page {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 340px;
+    max-height: 460px;
+    overflow-y: auto;
+    background-color: transparent;
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+}
+
+.total-earn {
+    width: 300px;
+    min-height: 60px;
+    background-color: #2f2f2f;
+    border: 10px solid #2f2f2f;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.header-total-earn {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.data-earn {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.data-earn-value {
+    width: fit-content;
+    height: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-right: 10px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 30px;
+}
+
+.data-earn-percent {
+    width: fit-content;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: green;
+    font-size: 15px;
+    font-family: 'jbmn-bold';
+}
+
+.pro-earn {
+    width: 300px;
+    min-height: 25px;
+    background-color: #2f2f2f;
+    border: 10px solid #2f2f2f;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-pro-earn {
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    margin-right: 175px;
+}
+
+.toggle-container {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ẩn checkbox mặc định */
+.toggle-checkbox {
+    display: none;
+}
+
+/* Container của toggle switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Thanh trượt nền */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000; /* Nền đen khi chưa chọn */
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+/* Nút trượt */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff; /* Nút trượt màu trắng */
+    transition: 0.4s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dấu X hoặc ✓ bên trong nút trượt */
+.slider:before {
+    content: "✗"; /* Dấu X khi chưa chọn */
+    color: #000; /* Màu đen cho dấu X */
+    font-size: 14px;
+    font-family: 'jbmn-bold';
+    line-height: 26px; /* Căn giữa theo chiều dọc */
+    text-align: center; /* Căn giữa theo chiều ngang */
+}
+
+.toggle-checkbox:checked + .slider:before {
+    content: "✓"; /* Dấu ✓ khi được chọn */
+    color: #000; /* Màu đen cho dấu ✓ */
+    transform: translateX(26px); /* Di chuyển nút trượt sang phải */
+}
+
+/* Khi checkbox được chọn */
+.toggle-checkbox:checked + .slider {
+    background-color: #000; /* Màu xanh khi được chọn */
+}
+
+/* Tùy chỉnh khoảng cách giữa các toggle switch */
+.toggle-switch:nth-child(1) {
+    margin-right: 10px; /* Khoảng cách 10px */
+}
+
+.toggle-switch:nth-child(2) {
+    margin-right: 30px; /* Khoảng cách 30px */
+}
+
+.header-earn-tokens {
+    width: 320px;
+    min-height: 15px;
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header-text-earn-tokens {
+    font-size: 17px;
+    font-family: 'jbmn-bold';
+    color: #fff;
+    margin-right: 15px;
+}
+
+.add-button {
+    height: 17px;
+    cursor: pointer;
+}
+
+.earn-token-item {
+    width: 300px;
+    height: 50px;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    border: 10px solid #2f2f2f;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.earn-token-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: -15px;
+}
+
+.earn-chain-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+.earn-token-col-1 {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.earn-token-name {
+    font-size: 15px;
+    font-family: 'jbmn-bold';
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.earn-token-chain {
+    font-size: 10px;
+    color: #fff;
+}
+
+.earn-token-percent {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    background-color: transparent;
+    color: green;
+    font-size: 12px;
+    font-family: 'jbmn-bold';
+    margin-top: 16px;
+}
+
+.wrap-earn-token-col-2 {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.earn-token-col-2 {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -3px;
+    margin-right: 10px;
+}
+
+.earn-token-amount {
+    font-size: 20px;
+    font-family: 'jbmn-bold';
+    color: #fff;
+}
+
+.earn-token-usdt {
+    font-size: 12px;
+    color: #fff;
+}
+
+.wrap-arrow {
+    height: 50px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.earn-token-arrow {
+    height: 10px;
+}
+
+.earn-token-protocol {
+    width: 280px;
+    height: 40px;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    border: 10px solid #2f2f2f;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.earn-token-protocol.active {
+    background-color: #757779;
+    border: 10px solid #757779;
+    }
+
+.earn-token-protocol-icon {
+    height: 30px;
+    margin-top: 5px;
+    margin-right: 50px;
+}
+
+.earn-token-protocol-tvl {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.header-earn-token-protocol-tvl {
+    font-size: 15px;
+    font-family: 'jbmn-bold';
+    margin-bottom: 5px;
+}
+
+.value-earn-token-protocol-tvl {
+    font-size: 10px;
+}
+
+.earn-token-protocol-apr {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-earn-token-protocol-apr {
+    font-size: 15px;
+    font-family: 'jbmn-bold';
+    margin-bottom: 5px;
+}
+
+.value-earn-token-protocol-apr {
+    font-size: 10px;
+}

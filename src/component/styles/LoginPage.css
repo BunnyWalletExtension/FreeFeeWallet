@@ -1,0 +1,122 @@
+.books {
+    position: fixed;
+    top: 30px;
+    left: 100px;
+    width: 150px;
+    height: 150px;
+}
+
+.logo-cat {
+    position: fixed;
+    top: 200px;
+    left: 160px;
+    width: 30px;
+    height: 30px;
+}
+
+.name-wallet {
+    position: fixed;
+    top: 230px;
+    left: 0px;
+    width: 350px;
+    height: fit-content;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'jbmn-bold';
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+    white-space: nowrap; 
+}
+
+.slogan {
+    position: fixed;
+    top: 290px;
+    left: 0px;
+    width: 350px;
+    height: fit-content;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+    white-space: nowrap; 
+}
+
+.password-input {
+    position: fixed;
+    top: 360px;
+    left: 25px;
+    width: 300px;
+    height: 50px;
+    color: #000;
+    background-color: #fff;
+    font-size: 16px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.unlock-button {
+    position: fixed;
+    top: 440px;
+    left: 27px;
+    width: 300px;
+    height: 50px;
+    color: #000;
+    background-color: #fff; 
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.password-new {
+    position: fixed;
+    top: 330px;
+    left: 25px;
+    width: 300px;
+    height: 50px;
+    color: #000;
+    background-color: #fff;
+    font-size: 16px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.password-confirm {
+    position: fixed;
+    top: 400px;
+    left: 25px;
+    width: 300px;
+    height: 50px;
+    color: #000;
+    background-color: #fff;
+    font-size: 16px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.password-not-match {
+    position: fixed;
+    top: 460px;
+    width: 350px;
+    height: 12px;
+    font-size: 12px;
+    text-align: center;
+    color: red;
+    background-color: transparent;
+    opacity: 0;
+}
+
+.create-account-button {
+    position: fixed;
+    top: 490px;
+    left: 27px;
+    width: 300px;
+    height: 50px;
+    color: #000;
+    background-color: #fff; 
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+

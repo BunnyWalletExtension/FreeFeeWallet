@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "FreeFeeWallet",
+    "version": "1.0",
+    "description": "",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "scripting",
+        "tabs",
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "icons": {
+        "16": "logo-cat.png",
+        "32": "logo-cat.png",
+        "48": "logo-cat.png"
+    }
+}

@@ -1,0 +1,24 @@
+.switch-page {
+    position: fixed;
+    bottom: 0;
+    width: 350px;
+    height: 40px;
+    background-color: #161616;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.switch-page-item {
+    width: 110px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #161616;
+}
+
+.switch-img {
+    height: 40px;
+    cursor: pointer;
+}

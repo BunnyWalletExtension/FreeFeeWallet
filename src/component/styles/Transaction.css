@@ -1,0 +1,137 @@
+.transaction {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 550px;
+    background-color: #000;
+    z-index: 1000;
+}
+
+.approve-title {
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    color: #fff
+}
+
+.message-title {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    color: #777e90;
+}
+
+.wrap-message {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    width: 290px;
+    min-height: 210px;
+    max-height: 210px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: #fff 20px solid;
+    border-radius: 20px;
+}
+
+.network-tx {
+    position: fixed;
+    top: 350px;
+    left: 10px;
+    width: 310px;
+    height: 30px;
+    background-color: #2f2f2f;
+    border: #2f2f2f 10px solid;
+    color: #fff;
+    font-size: 18px;
+}
+
+.network-tx {
+    position: fixed;
+    top: 335px;
+    left: 10px;
+    width: 310px;
+    height: 40px;
+    background-color: #2f2f2f;
+    border: #2f2f2f 10px solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.tail-network-tx {
+    margin-left: auto;
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fee-tx {
+    position: fixed;
+    top: 410px;
+    left: 10px;
+    width: 310px;
+    height: 40px;
+    background-color: #2f2f2f;
+    border: #2f2f2f 10px solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.tail-fee-tx {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.reject-button {
+    position: fixed;
+    top: 490px;
+    left: 10px;
+    width: 116px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #fff;
+    font-size: 18px;
+    font-family: 'jbmn-bold';
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.approve-button {
+    position: fixed;
+    top: 490px;
+    right: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #58fe80;
+    color: #000;
+    font-size: 18px;
+    font-family: 'jbmn-bold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
