@@ -31,9 +31,8 @@ function Accounts() {
                             <div className='account-item'
                                 onClick={() => {
                                     if (indexWallet !== index) {
-                                        chrome.storage.local.set({ indexWallet: index }, () => {
-                                            dispatch(changeIndexWallet(index));
-                                        });
+                                        dispatch(changeIndexWallet(index));
+                                        chrome.storage.local.set({ indexWallet: index }, () => { });
                                     }
                                 }}
                             >
