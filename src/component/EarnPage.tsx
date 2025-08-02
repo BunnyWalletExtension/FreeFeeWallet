@@ -13,16 +13,16 @@ const earnTokens = [
         token: 'Solana',
         chain: 'Base',
         earnPercent: 5.46,
-        tokenAmount: 1000.00000,
-        tokenUSDT: 0.00,
+        tokenAmount: 0.11236,
+        tokenUSDT: 18.42,
     },
-    {
-        token: 'Solana',
-        chain: 'Base',
-        earnPercent: 5.46,
-        tokenAmount: 0.00000,
-        tokenUSDT: 0.00,
-    }
+    // {
+    //     token: 'Solana',
+    //     chain: 'Base',
+    //     earnPercent: 5.46,
+    //     tokenAmount: 0.00000,
+    //     tokenUSDT: 0.00,
+    // }
 ];
 
 const tokenProtocols = [
@@ -33,9 +33,9 @@ const tokenProtocols = [
             apr: '4.5%',
         },
         {
-            name: 'Kamino',
-            tvl: '12M',
-            apr: '4.5%',
+            name: 'Solend',
+            tvl: '18M',
+            apr: '3.6%',
         }
     ],
     [
@@ -51,6 +51,7 @@ const img: any = {
     'solana': img_lib.logo_solana,
     'base': img_lib.logo_base,
     'kamino': img_lib.logo_kamino,
+    'solend': img_lib.logo_solend,
 };
 
 function EarnPage() {
@@ -80,15 +81,35 @@ function EarnPage() {
         if (showTxs) {
             const el = document.querySelector('.transaction') as HTMLInputElement;
             if (!el) return;
+            const notifyTxs = document.querySelector('.notify-txs') as HTMLInputElement;
+
             const rejectButton = el.querySelector('.reject-button') as HTMLInputElement;
             rejectButton.addEventListener('click', () => {
                 dispatch(changeShowTxs(false));
-                return;
+                notifyTxs.textContent = 'Transaction rejected';
+                notifyTxs.style.color = 'red';
+                notifyTxs.style.border = '1px solid red';
+                notifyTxs.style.opacity = '1';
+                setTimeout(() => {
+                    notifyTxs.style.opacity = '0';
+                }, 3000);
             });
+
             const approveButton = el.querySelector('.approve-button') as HTMLInputElement;
             approveButton.addEventListener('click', () => {
-                dispatch(changeShowTxs(false));
-                setShowEarning(!showEarning);
+                approveButton.textContent = 'Approving...';
+                setTimeout(() => {
+                    approveButton.textContent = 'Approve';
+                    dispatch(changeShowTxs(false));
+                    setShowEarning(!showEarning);
+                    notifyTxs.textContent = 'Transaction successful';
+                    notifyTxs.style.color = '#58fe80';
+                    notifyTxs.style.border = '1px solid #58fe80';
+                    notifyTxs.style.opacity = '1';
+                    setTimeout(() => {
+                        notifyTxs.style.opacity = '0';
+                    }, 3000);
+                }, 2000);
             });
         }
     }, [showTxs]);

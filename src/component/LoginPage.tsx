@@ -75,7 +75,7 @@ function LoginPage() {
         <div className='login-page'>
             <img className='books' alt="books" src={img_lib.books} />
             <img className='logo-cat' alt="logo-cat" src={img_lib.cat} />
-            <div className='name-wallet'>FreeFee Wallet</div>
+            <div className='name-wallet'>Bunny Wallet</div>
             <div className='slogan'>Securely store and transact with ease.</div>
             {signedUp ? (
                 <div>
