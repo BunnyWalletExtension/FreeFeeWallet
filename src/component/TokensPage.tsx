@@ -5,14 +5,11 @@ import * as func from '../functions/index'
 import * as img_lib from '../img/index'
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import Transaction from './Transaction';
 import { useDispatch } from 'react-redux';
 import { changeShowTxs } from '../redux/slices/txsSlice';
 import { incrementByAmount } from '../redux/slices/balanceSlice';
 
 function TokensPage() {
-    // const pubKey = "7q6PYSw2dCYfw74igJtDB4iodhCrGBvUg78TnScK6kZj";
-
     const [sendToken, setSendToken] = useState(false);
     const [pubKey, setPubKey] = useState('');
     const [amountToken, setAmountToken] = useState(0);
@@ -110,7 +107,6 @@ function TokensPage() {
 
     return (
         <div className='tokens-page'>
-            <Transaction />
             <div className='profile-user'>
                 <div className='profile-user-row-1'>
                     <img className='profile-user-img' src={img_lib.user} />

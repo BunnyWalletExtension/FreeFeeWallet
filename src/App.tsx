@@ -8,12 +8,14 @@ import AddWalletPage from './component/AddWalletPage'
 import Accounts from './component/Accounts'
 import SwapPage from './component/SwapPage'
 import ActivityPage from './component/ActivityPage'
+import Transaction from './component/Transaction'
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { changePassword } from './redux/slices/passwordSlice'
 import { changePage } from './redux/slices/pageSlice'
 import { changeIndexWallet, changeWallets } from './redux/slices/walletsSlice'
+import { changeShowTxs } from './redux/slices/txsSlice'
 
 function App() {
     const pageCurrent = useSelector((state: any) => state.page.value);
@@ -22,6 +24,12 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        chrome.runtime.onMessage.addListener((message) => {
+            if (message.type === 'SHOW_TRANSACTION') {
+                dispatch(changeShowTxs(true));
+            }
+        });
+
         chrome.storage.local.get(['timeLogIn', 'password', 'wallets', 'indexWallet'], (result) => {
             if (result.password) {
                 dispatch(changePassword(result.password));
@@ -74,7 +82,7 @@ function App() {
             {pageCurrent === 'swap-page' && <SwapPage />}
             {pageCurrent === 'activity-page' && <ActivityPage />}
             <SwitchPage />
-            {/* <Transaction /> */}
+            <Transaction />
         </div>
     )
 }

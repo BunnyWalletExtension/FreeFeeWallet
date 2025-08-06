@@ -10,7 +10,31 @@
         "scripting",
         "tabs",
         "activeTab",
-        "storage"
+        "storage",
+        "action"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "https://*"
+            ],
+            "resources": [
+                "provider.js"
+            ]
+        }
     ],
     "host_permissions": [
         "https://*/*",

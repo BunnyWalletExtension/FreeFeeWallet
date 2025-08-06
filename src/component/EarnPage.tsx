@@ -3,7 +3,6 @@ import './styles/EarnPage.css';
 import add_button from '../img/add_button.png'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Transaction from './Transaction';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { changeShowTxs } from '../redux/slices/txsSlice';
@@ -116,7 +115,6 @@ function EarnPage() {
 
     return (
         <div className="earn-page">
-            <Transaction />
             <div className="total-earn">
                 <div className="header-total-earn">Total interest earned</div>
                 <div className="data-earn">
