@@ -8,6 +8,10 @@
     src: url('D:/laptrinh/FreeFeeWallet/src/assets/ttf/JetBrainsMono-Bold.ttf') format('truetype');
 }
 
+.App::-webkit-scrollbar {
+  display: none; /* Ẩn thanh trượt */
+}
+
 .App {
     width: 350px;
     height: 550px;

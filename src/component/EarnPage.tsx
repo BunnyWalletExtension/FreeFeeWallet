@@ -15,13 +15,13 @@ const earnTokens = [
         tokenAmount: 0.11236,
         tokenUSDT: 18.42,
     },
-    // {
-    //     token: 'Solana',
-    //     chain: 'Base',
-    //     earnPercent: 5.46,
-    //     tokenAmount: 0.00000,
-    //     tokenUSDT: 0.00,
-    // }
+    {
+        token: 'Solana',
+        chain: 'Base',
+        earnPercent: 5.46,
+        tokenAmount: 0.00000,
+        tokenUSDT: 0.00,
+    }
 ];
 
 const tokenProtocols = [
@@ -46,7 +46,7 @@ const tokenProtocols = [
     ]
 ];
 
-const img: any = {
+const imgs: any = {
     'solana': img_lib.logo_solana,
     'base': img_lib.logo_base,
     'kamino': img_lib.logo_kamino,
@@ -146,8 +146,8 @@ function EarnPage() {
                         {earnTokens.map((item, index) => (
                             <div>
                                 <div className='earn-token-item' key={index}>
-                                    <img className='earn-token-icon' alt={item.token} src={img[item.token.toLowerCase()]} />
-                                    <img className='earn-chain-icon' alt={item.token} src={img[item.chain.toLowerCase()]} />
+                                    <img className='earn-token-icon' alt={item.token} src={imgs[item.token.toLowerCase()]} />
+                                    <img className='earn-chain-icon' alt={item.token} src={imgs[item.chain.toLowerCase()]} />
                                     <div className='earn-token-col-1'>
                                         <div className='earn-token-name'>{item.token}</div>
                                         <div className='earn-token-chain'>{item.chain}</div>
@@ -171,7 +171,7 @@ function EarnPage() {
                                         key={protocolIndex}
                                         onClick={() => { chooseIndex(index, protocolIndex) }}
                                     >
-                                        <img className='earn-token-protocol-icon' alt={protocol.name} src={img[protocol.name.toLowerCase()]} />
+                                        <img className='earn-token-protocol-icon' alt={protocol.name} src={imgs[protocol.name.toLowerCase()]} />
                                         <div className='earn-token-protocol-tvl'>
                                             <div className='header-earn-token-protocol-tvl'>TVL</div>
                                             <div className='value-earn-token-protocol-tvl'>{protocol.tvl}</div>

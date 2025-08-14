@@ -1,38 +1,37 @@
-/* Tùy chỉnh thanh trượt */
 .earn-page::-webkit-scrollbar {
-  width: 10px; /* Độ rộng của thanh trượt */
+    width: 10px; 
 }
 
-/* Phần nền của thanh trượt */
 .earn-page::-webkit-scrollbar-track {
-  background: #000; /* Màu nền của track */
-  /* border-radius: 10px; */
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+    background: #000;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); 
 }
 
-/* Phần thumb (phần di chuyển của thanh trượt) */
 .earn-page::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #4a90e2, #50c4b7); /* Gradient màu cho thumb */
-  border-radius: 10px; 
-  border: 2px solid #000; /* Viền quanh thumb */
+    /* background: linear-gradient(45deg, #4a90e2, #50c4b7);  */
+    border-radius: 10px; 
+    border: 2px solid #000; 
 }
 
-/* Hiệu ứng hover cho thumb */
-.earn-page::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #357abd, #3baaa0); /* Màu gradient khi hover */
-}
+/* .earn-page::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #357abd, #3baaa0); 
+} */
+
+/* .earn-page::-webkit-scrollbar {
+  display: none;
+} */
 
 .earn-page {
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 0px;
-    width: 340px;
+    width: 350px;
     max-height: 460px;
     overflow-y: auto;
     background-color: transparent;
     display: flex;
-    align-items: center; 
     flex-direction: column;
+    align-items: center; 
 }
 
 .total-earn {

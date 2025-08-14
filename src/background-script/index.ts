@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 });
 
-chrome.tabs.onCreated.addListener((tab) => {
-    console.log('Tab created:', tab);
-    chrome.action.openPopup();
-});
+// chrome.tabs.onCreated.addListener((tab) => {
+//     console.log('Tab created:', tab);
+//     chrome.action.openPopup();
+// });

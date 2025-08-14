@@ -14,12 +14,13 @@
         "action"
     ],
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js",
+        "type": "module"
     },
     "content_scripts": [
         {
             "matches": [
-                "https://*"
+                "<all_urls>"
             ],
             "js": [
                 "content.js"
@@ -29,7 +30,7 @@
     "web_accessible_resources": [
         {
             "matches": [
-                "https://*"
+                "<all_urls>"
             ],
             "resources": [
                 "provider.js"

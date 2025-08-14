@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
-import { crx } from '@crxjs/vite-plugin';
-import manifest from './public/manifest.json';
+// import { crx } from '@crxjs/vite-plugin';
+// import manifest from './public/manifest.json';
 import path from 'path';
 
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
             },
             protocolImports: true,
         }),
-        crx({ manifest }),
+        // crx({ manifest }),
     ],
     server: {
         port: 3000,

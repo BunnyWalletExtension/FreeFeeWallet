@@ -11,7 +11,7 @@ interface BalanceState {
 }
 
 const initialState: BalanceState = {
-    value: [0.77823, 0.11326, 0.45891, 0.23902, 0.43982],
+    value: [0.77823, 0.11326, 0.45891, 0.23902, 0.43982, 0.49532, 0.23456],
 };
 
 const balanceSlice = createSlice({

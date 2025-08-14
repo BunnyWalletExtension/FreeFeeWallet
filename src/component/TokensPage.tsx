@@ -1,5 +1,7 @@
 import './styles/TokensPage.css';
-import { /*Connection, LAMPORTS_PER_SOL, PublicKey,*/ Keypair } from '@solana/web3.js';
+// import { DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
+import * as bip39 from 'bip39';
+import { Keypair } from '@solana/web3.js';
 import { derivePath } from 'ed25519-hd-key';
 import * as func from '../functions/index'
 import * as img_lib from '../img/index'
@@ -22,19 +24,33 @@ function TokensPage() {
 
     const dispatch = useDispatch();
 
+    // const getWalletCosmos = async (mnemonic: string) => {
+    //     const wallet = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
+    //         prefix: 'orai',
+    //     });
+    //     const [firstAccount] = await wallet.getAccounts();
+    //     return firstAccount;
+    // }
+
+    const getKeypairFromMnemonic = (mnemonic: string, derivationPath: string = "m/44'/501'/0'/0'"): Keypair => {
+        const seed = bip39.mnemonicToSeedSync(mnemonic).toString('hex');
+        const derivedSeed = derivePath(derivationPath, seed).key;
+        return Keypair.fromSeed(derivedSeed.slice(0, 32));
+    }
+
     useEffect(() => {
-        const wallet = wallets[indexWallet];
-        console.log(wallet);
+        const currentWallet = wallets[indexWallet];
+        console.log("Current wallet:", currentWallet);
         func.decryptSeed(
-            wallet.mnemonic.encrypted,
-            wallet.mnemonic.salt,
-            wallet.mnemonic.iv,
+            currentWallet.mnemonic.encrypted,
+            currentWallet.mnemonic.salt,
+            currentWallet.mnemonic.iv,
             password
-        ).then((seedPhrase) => {
+        ).then(async (seedPhrase) => {
             console.log('Seed Phrase:', seedPhrase);
-            const derivedSeed = derivePath("m/44'/501'/0'/0'", seedPhrase).key;
-            const keypair = Keypair.fromSeed(derivedSeed);
-            setPubKey(keypair.publicKey.toString());
+            const keyPair = getKeypairFromMnemonic(seedPhrase);
+            console.log('Keypair:', keyPair);
+            setPubKey(keyPair.publicKey.toBase58());
         })
     }, [password, wallets, indexWallet]);
 
@@ -108,19 +124,23 @@ function TokensPage() {
     return (
         <div className='tokens-page'>
             <div className='profile-user'>
-                <div className='profile-user-row-1'>
+                <div className='profile-row'>
                     <img className='profile-user-img' src={img_lib.user} />
                     <div className='profile-user-name'>{wallets[indexWallet].name}</div>
-                    <div className='flex-end'>
+                    <div className='end-row'>
                         <img className='copy-address' src={img_lib.copy} onClick={copyAddress} />
-                        <div className='profile-user-address'>{pubKey.slice(0, 5) + '...' + pubKey.slice(40, 44)}</div>
+                        <div className='profile-user-address'>{pubKey.slice(0, 7) + '...' + pubKey.slice(40, 44)}</div>
                     </div>
                 </div>
-                <div className='usdt-balance'>{'$ ' + (Number(balance[indexWallet]) * 164).toFixed(2)}</div>
-                <div className='receive-button'>Receive</div>
-                <div className='send-button' onClick={() => { setSendToken(true) }}>Send</div>
+                <div className='profile-row'>
+                    <div className='usdt-balance'>{'$ ' + (Number(balance[indexWallet]) * 164).toFixed(2)}</div>
+                </div>
+                <div className='profile-row'>
+                    <div className='receive-button'>Receive</div>
+                    <div className='send-button' onClick={() => { setSendToken(true) }}>Send</div>
+                </div>
             </div>
-            <div className='tokens'>
+            <div className='tokens' style={{ marginTop: '10px' }}>
                 <div className='token-item'>
                     <img className='token-img' src={img_lib.logo_solana} />
                     <div className='token-symbol'>SOL</div>
@@ -151,15 +171,17 @@ function TokensPage() {
                     >
                         Send
                     </div>
-                    <div className='token-item' style={{ top: '350px' }}>
-                        <input type='checkbox' className='checkbox-token'
-                            style={{ marginRight: '10px', cursor: 'pointer' }}
-                        />
-                        <img className='token-img' src={img_lib.logo_solana} />
-                        <div className='token-symbol'>SOL</div>
-                        <div className='flex-end2'>
-                            <div className='token-balance'>{balance[indexWallet].toFixed(5)}</div>
-                            <div className='token-value'>{'$ ' + (Number(balance[indexWallet]) * 164).toFixed(2)}</div>
+                    <div className='tokens' style={{ position: 'fixed', top: '350px' }}>
+                        <div className='token-item'>
+                            <input type='checkbox' className='checkbox-token'
+                                style={{ marginRight: '10px', cursor: 'pointer' }}
+                            />
+                            <img className='token-img' src={img_lib.logo_solana} />
+                            <div className='token-symbol'>SOL</div>
+                            <div className='flex-end2'>
+                                <div className='token-balance'>{balance[indexWallet].toFixed(5)}</div>
+                                <div className='token-value'>{'$ ' + (Number(balance[indexWallet]) * 164).toFixed(2)}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

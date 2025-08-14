@@ -27,11 +27,12 @@
 
 .approve-title {
     position: fixed;
-    top: 5px;
-    left: 10px;
+    width: 350px;
+    height: fit-content;
     font-size: 18px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     color: #fff
 }
 
@@ -58,6 +59,7 @@
     background-color: #fff;
     border: #fff 20px solid;
     border-radius: 20px;
+    color:#000;
 }
 
 .network-tx {
