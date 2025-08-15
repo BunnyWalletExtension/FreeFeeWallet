@@ -1,0 +1,54 @@
+.activity-page {
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    width: 350px;
+    min-height: 470px;
+    max-height: 470px;
+    overflow-y: auto;
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.group-date-txs {
+    width: 350px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.tx-item {
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.tx-item-token-img {
+    height: 40px;
+    width: 40px;;
+}
+
+.tx-item-left {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tx-item-right {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

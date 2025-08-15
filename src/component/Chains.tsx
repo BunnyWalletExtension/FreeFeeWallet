@@ -18,6 +18,7 @@ const logoChains = [
     img_lib.logo_solana,
 ];
 const rpcs = [
+    "https://base.drpc.org",
     "https://api.mainnet-beta.solana.com",
     "https://api.devnet.solana.com",
     "https://api.testnet.solana.com",
